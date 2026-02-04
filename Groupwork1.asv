@@ -1,0 +1,27 @@
+
+% Question1
+V=230
+f=50
+R=500
+L=650
+w=2*pi*f
+Z=R+j*w*L
+phi=atan(w*L/R)
+% equation
+t=linspace(2,0.5,1000);
+I=V/abs(Z).*(cos(w*t-phi)-exp(-t*R/L)*cos(phi))
+
+plot(I)
+
+
+
+% Question2
+
+X=linspace(-pi/4,phi,100)
+
+x=cos(phi).*sqrt(2*cos(2*phi))
+
+y=sin(phi).*sqrt(2*cos(2*phi))
+
+
+
