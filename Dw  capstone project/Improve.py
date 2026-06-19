@@ -1,6 +1,6 @@
-
 import pandas as pd
 data = pd.read_csv('Telecom_customer_data.csv')
+
 # fix TotalCharges
 data["TotalCharges"] = pd.to_numeric(data["TotalCharges"], errors="coerce")
 
