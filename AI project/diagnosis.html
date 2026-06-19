@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Maize Expert System</title>
+</head>
+
+<body>
+
+<h2>Maize Crop Diagnosis</h2>
+
+<input id="dp" placeholder="Drought Probability"><br><br>
+<input id="de" placeholder="Drought Extent"><br><br>
+<input id="extent" placeholder="Damage Extent"><br><br>
+
+<button onclick="diagnose()">Diagnose</button>
+
+<p id="output"></p>
+
+<script>
+function diagnose() {
+    let dp = parseFloat(document.getElementById("dp").value);
+    let de = parseFloat(document.getElementById("de").value);
+    let extent = parseFloat(document.getElementById("extent").value);
+
+    let result = "";
+
+    if (dp > 0.5 && de > 30) {
+        result = "Severe drought stress → Recommend irrigation";
+    }
+    else if (extent == 0 && dp < 0.05) {
+        result = "Healthy crop";
+    }
+    else if (extent > 50) {
+        result = "Severely damaged crop";
+    }
+    else {
+        result = "Moderate condition → Monitor crop";
+    }
+
+    document.getElementById("output").innerText = result;
+}
+</script>
+
+</body>
+</html>
